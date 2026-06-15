@@ -13,6 +13,7 @@ class Atm:
         print("Enter 4 to Check Balance")
         print("Enter 5 to exit the Operations")
         num = int(input("Enter the number : "))
+        
         if(num ==1):
             Atm.create_pin()
         elif(num ==2):
