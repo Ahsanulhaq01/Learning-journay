@@ -1,18 +1,13 @@
 import TodoList from "@/components/TodoList";
-import db from "@/utils/db.js"
-const getData = async()=>{
-        const todos = await db.todo.find({})
-        return todos;
-    }
 
 
-async function helloPage(){
+function helloPage(){
 
-    const todos = await getData()
+    const todos = [{_id : 1 ,content : "does coding" }, {_id : 2 ,content : 'excersice'} , {_id : 3 ,content : "namaz"} , {_id : 4 ,content : "talawat"},]
     return(
         <>
         <div>Todes Page</div>
-        <TodoList todo = {todos}/>
+        <TodoList todos = {todos}/>
         </>
         
     )
