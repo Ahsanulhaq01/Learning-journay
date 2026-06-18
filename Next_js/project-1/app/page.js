@@ -1,3 +1,4 @@
+import NewTodo from "@/components/NewTodoForm";
 import Link from "next/link";
 
 
@@ -10,7 +11,7 @@ export default function Home() {
   return (
     <>
     <div>Welcome to homePage</div>
-
+    <hr/>
     {links.map((link)=>{
       return(
         <Link key={link.href} href={link.href}>{link.label}</Link>
