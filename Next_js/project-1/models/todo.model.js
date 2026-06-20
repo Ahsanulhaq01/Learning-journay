@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 const todoSchema = mongoose.Schema({
-    content:{
-        type : String,
+    content: {
+        type: String,
 
     },
-    createdBy : {
-        type : String,
-        default : "ahsan"
+    createdBy: {
+        type: String,
+        default: "ahsan"
     }
 })
 

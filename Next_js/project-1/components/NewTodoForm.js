@@ -1,16 +1,16 @@
 'use client'
 import { useState } from "react";
 
-function NewTodo(){
-    const [newTodo , setNewTodo] = useState();
+function NewTodo() {
+    const [newTodo, setNewTodo] = useState();
 
     console.log(window.localStorage)
 
     return (
         <>
-        <form>
-            <input type="text"></input>
-        </form>
+            <form>
+                <input type="text"></input>
+            </form>
         </>
     )
 }
