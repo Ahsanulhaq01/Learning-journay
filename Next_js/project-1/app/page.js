@@ -1,13 +1,25 @@
-import NewTodo from "@/components/NewTodoForm";
 import Link from "next/link";
 
+async function delay(ms){
+   return await new Promise((resolve)=>{
+    setTimeout(resolve , ms)
+  })
 
-const links = [
+ 
+}
+
+async function getLinks(){
+  await delay(2000);
+   return  [
   {href : "/docs" , label : "Docs"},
   {href : "/todos" , label : "Todos"},
   {href : "/" , label : "Home"}
 ]
-export default function Home() {
+}
+
+export default async function Home() {
+
+  const links = await getLinks();
   return (
     <>
     <div>Welcome to homePage</div>

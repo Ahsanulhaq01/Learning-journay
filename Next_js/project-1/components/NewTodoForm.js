@@ -4,7 +4,7 @@ import { useState } from "react";
 function NewTodo() {
     const [newTodo, setNewTodo] = useState();
 
-    console.log(window.localStorage)
+    // console.log(window.localStorage)
 
     return (
         <>
