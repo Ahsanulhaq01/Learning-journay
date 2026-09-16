@@ -4,6 +4,8 @@ import schema from './schema.json' with {type : 'json'}
 import {cosmiconfigSync} from 'cosmiconfig'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
+import createLogger from "../logger.js";
+const logger = createLogger('config:mgr')
 const configLoader = cosmiconfigSync("tool")
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url)
@@ -14,20 +16,22 @@ const ajv = new Ajv({ jsonPointers : 'true' });
 function getConfig() {
     const result = configLoader.search(process.cwd());
     if (!result) {
-    console.log(chalk.yellow('Could not find configuration, using default'));
+      logger.warning("could not find configuration , using default")
+    // console.log(chalk.yellow('Could not find configuration, using default'));
     return { port: 1234 };
   } else {
     const isValid = ajv.validate(schema , result.config)
     if(!isValid){
-      console.log(chalk.yellow("Invalid Configuration was supplied"))
+      logger.warning("Invalid configuration was Supplied")
+      // console.log(chalk.yellow("Invalid Configuration was supplied"))
       console.log()
 
       console.log(betterAjvErrors(schema , result.config ,ajv.errors))
       
       process.exit(1);
     }
-
-    console.log('Found configuration', result.config);
+    logger.debug("found configurtion" , result.config)
+    // console.log('Found configuration', result.config);
     return result.config;
   }
     // const pkgPath = pkgUp.sync({ cwd: process.cwd() })

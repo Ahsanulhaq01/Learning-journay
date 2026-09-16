@@ -5,6 +5,8 @@ import { pkgUp } from 'pkg-up';
 import { createRequire } from 'node:module';
 import start from '../src/commands/start.js';
 import getConfig from '../src/config/config-mgr.js';
+import createLogger from '../src/logger.js';
+const logger = createLogger("bin")
 const require = createRequire(import.meta.url);
 
 
@@ -15,6 +17,7 @@ try {
         '--build' : Boolean,
     })
     
+    logger.debug("Recieved args" , args)
     if(args['--start']){
 
         const config = getConfig();
@@ -30,7 +33,8 @@ try {
 
     }
 } catch (e) {
-    console.log(chalk.yellow(e.message));
+    logger.warning(e.message)
+    // console.log(chalk.yellow(e.message));
     console.log()
     usage();
 }
