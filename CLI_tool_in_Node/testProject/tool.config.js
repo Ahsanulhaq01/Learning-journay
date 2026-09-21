@@ -1,3 +1,3 @@
-const port = 6666;
-
-export default port;
+export default {
+    port : 6666
+}
