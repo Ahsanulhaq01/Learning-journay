@@ -1,0 +1,7 @@
+school:
+- name: ahsan public school and college karak
+  principalName: ahsanulhaq
+  Student:
+  - name: sahab
+    rollno: 12
+    class: 2

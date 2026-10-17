@@ -1,0 +1,101 @@
+student: !!seq
+ - mark
+ - name 
+ - Rollno
+
+
+#some time the key of seq can be empty this is known is parse sequence example is below
+
+
+parse seq: !!seq
+ - hi
+ - how
+ -
+ - where
+ - now
+
+
+#nested sequences
+
+-
+ - mango
+ - apple
+ - banana
+-
+ - marks
+ - name
+ - roll_no
+
+
+#key value pair for this we have map
+
+#!!map
+
+#nested mapping (map inside another map)
+
+name: !!map
+role:
+ age: 23
+ job: student
+
+
+#we can different values for a single key 
+
+pair example: !!pair
+ -job: student
+ -job: teacher
+
+ #same as 
+
+pair example: !!pair [job: student , job: teacher]
+
+#we also have unique value for this we have SET(it will allow us to have unique values here we don't have key value pair , here is item and item only )
+
+names: !!set
+ ? kunal
+ ? rahul
+ ? rabat
+
+
+#sometime we want to store a key which has itself a value of sequence
+#for this we have dictionaray
+
+peoples: !!omap
+ - kunal:
+   name: kunal
+   age: 12
+   rollno: 32
+ - rahul:
+   name: rahul
+   age: 32
+   roll_no: 12
+
+  
+#reusing properties using anchors
+
+liking: &likes #here $likes is the name of anchors we give it a name in order to use it
+ fav fruit: apple
+ dislike: mango
+
+#here the code become repeatative in order to avoid it we use anchors
+#example of anchors is below
+person1:
+ name: ahsan
+ fav fruit: apple
+ dislike: mango
+
+person2:
+ name: ahsan
+ <<: *likes  #this is how we use anchors in order to avoid the repeatation of the code
+
+person3:
+ name: ahsan
+ <<: *likes
+
+
+
+
+
+
+
+

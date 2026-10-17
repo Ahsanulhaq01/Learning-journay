@@ -1,0 +1,85 @@
+myself: Ahsanulhaq #(this ahsanulhaq is known is variable)
+
+#variable can be string , integer or anything below are string variable in YAML
+
+apple: "fruit"
+apple: 'fruit'
+appple: fruit
+
+#the above three are string variables
+
+
+#for multiple line that we want that yaml treat it as single line we use these below two symbol
+
+# | 
+# >
+
+# i.e 
+
+message: !!str |
+ hello i am ahsan i 
+ am from karak you both
+ want to become a good 
+ engineer in pakistan
+
+
+message: !!str >
+ hello i am write this line
+ treat it like a single
+ i am learning yaml
+
+
+
+
+
+# we can have integer , float , boolean varible as well
+
+#Integer 
+
+number: 1000
+
+#float 
+
+number: 12.2.
+
+#boolean
+
+isfalse: !!bool No # in YAML the false like No , n ,N ,False ,false and true is like Yes , y Y , true , True
+
+
+#specify the type YAML actually detect it automatically but we can tell it actually force it to declare it with this DataTypes
+
+
+#INTEGER 
+
+zero: !!int 0
+
+positiveNumber: !!int 45
+negativeNumebr: !!int -45
+binaryNumebr: !!int 0b11001
+octalNumebr: !!int 0323245
+hexaDecimal: !!int 0x32
+commaValue: !!int +54_000 #54,000
+
+
+
+
+#FLOATING POINT NUMBER
+
+marks: !!float 42.2
+infinite: !!float .inf
+not a num: .nan
+
+
+
+
+#null
+
+surname: !!null null # or NULL , Null , ~
+
+
+
+#dates and time (by default UTC)
+
+data: 2001-02-12 #check google
+

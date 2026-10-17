@@ -1,0 +1,13 @@
+{
+    "school" :[{
+        "name" : "GHS",
+        "Principle":"someone",
+        "Students":{
+            "stduent":[{
+                "name": "ahsan",
+                "rollno": 23,
+                "marks": 122
+            }]
+        }
+    }]
+}

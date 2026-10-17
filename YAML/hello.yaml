@@ -1,0 +1,33 @@
+"apple" : "i am a red fruit",
+1 : "this is kunal rollmo"
+
+# we can write it like below they both are same 
+
+{apple : "here is my apple" , age : 23}
+
+#list 
+
+- apple
+- mangoes
+- banana
+
+#block
+
+#--- -> to tell YAML that the documents are separte  
+cites :
+ - karak
+ - peshawar
+ - kohat
+ - punjab
+
+#Or we can write at like this in order to avoid the error of identation
+
+
+cites: [karak , peshawar , kohat]
+
+#in YAML they does not provide the multi-line comments you have to add separete hash in every at the start
+
+
+# ... -> it represent that the document is ended
+
+
